@@ -428,7 +428,7 @@ const wikiRenderer = {
 
     // External link
     const plain = stripTags(text);
-    if (plain === href) return `[$(href)]`; 
+    if (plain === href) return `[${href}]`; 
     return `[${plain}|${href}]`;
   },
 
