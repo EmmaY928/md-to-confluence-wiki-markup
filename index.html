@@ -56,7 +56,7 @@ header h1 { font-size: 16px; font-weight: 600; white-space: nowrap; }
 }
 .toolbar button:hover { background: var(--border); border-color: var(--accent); } 
 .toolbar button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.toolbar button-primary:hover { background: var(--accent-hover); }
+.toolbar button.primary:hover { background: var(--accent-hover); }
 .toolbar button.copied { background: var(--green); border-color: var(--green); color: #fff; }
 .toolbar label {
   font-size: 13px; display: flex; align-items: center; gap: 4px; 
@@ -131,19 +131,19 @@ header h1 { font-size: 16px; font-weight: 600; white-space: nowrap; }
 const EMOJI_MAP = {
   "smile": "\u{1f604}", "laughing": "\u{1f606}", "blush": "\u{1f60a}", "smiley" : "\u{1f603}",
   "relaxed": "\u263a\ufe0f", "smirk": "\u{1f60f}", "heart_eyes": "\u{1f60d}", "kissing_heart": "\u{1f618}",
-  "kissing_closed_eyes": "\u{1f61a}", "flushed": "\u{1f633}", " relieved": "\u{1f60c}",
+  "kissing_closed_eyes": "\u{1f61a}", "flushed": "\u{1f633}", "relieved": "\u{1f60c}",
   "satisfied": "\u{1f606}", "grin": "\u{1f601}", "wink": "\u{1f609}", "stuck_out_tongue_winking_eye": "\u{1f61c}",
   "stuck_out_tongue_closed_eyes": "\u{1f61d}", "grinning": "\u{1f600}", "kissing": "\u{1f617}",
   "stuck_out_tongue": "\u{1f61b}", "sleeping": "\u{1f634}", "worried": "\u{1f61f}",
-  "frowning" : "\u{1f626}", "anguished": "\u{1f627}", "open_mouth": "\u{1f62e}",
-  "grimacing": "\u{1f62c}", "confused": "\u{1f615}", "hushed" : "\u{1f62f}", "expressionless" :"\u{1f611}",
-  "unamused" : "\u{1f612}", "sweat_smile": "\u{1f605}", "sweat": "\u{1f613}",
+  "frowning": "\u{1f626}", "anguished": "\u{1f627}", "open_mouth": "\u{1f62e}",
+  "grimacing": "\u{1f62c}", "confused": "\u{1f615}", "hushed": "\u{1f62f}", "expressionless": "\u{1f611}",
+  "unamused": "\u{1f612}", "sweat_smile": "\u{1f605}", "sweat": "\u{1f613}",
   "disappointed_relieved": "\u{1f625}", "weary": "\u{1f629}", "pensive": "\u{1f614}",
-  "disappointed": "\u{1f61e}", "confounded": "\u{1f616}", "fearful": "\uf1f628}", "cold_sweat": "\u{1f630}",
-  "persevere": "\u{1f623}", "cry": "\u{1f622}", "sob": "\u{1f62d}", "joy" : "\u{1f602}", "astonished": "\u{1f632}",
-  "scream": "\u{1f631}", "tired_face": "\u{1f62b}", "angry" : "\u{1f620}", "rage": "\u{1f621}",
-  "triumph" : "\u{1f624}", "sleepy" : "\u{1f62a}", "yum" : "\u{1f60b}", "mask": "\u{1f637}",
-  "sung lasses" : "\u{1f60e}", "dizzy_face": "\u{1f635}", "imp": "\u{1f47f}", "smiling_imp": "\u{1f608}",
+  "disappointed": "\u{1f61e}", "confounded": "\u{1f616}", "fearful": "\u{1f628}", "cold_sweat": "\u{1f630}",
+  "persevere": "\u{1f623}", "cry": "\u{1f622}", "sob": "\u{1f62d}", "joy": "\u{1f602}", "astonished": "\u{1f632}",
+  "scream": "\u{1f631}", "tired_face": "\u{1f62b}", "angry": "\u{1f620}", "rage": "\u{1f621}",
+  "triumph": "\u{1f624}", "sleepy": "\u{1f62a}", "yum": "\u{1f60b}", "mask": "\u{1f637}",
+  "sunglasses": "\u{1f60e}", "dizzy_face": "\u{1f635}", "imp": "\u{1f47f}", "smiling_imp": "\u{1f608}",
   "neutral_face": "\u{1f610}", "no_mouth": "\u{1f636}", "innocent": "\u{1f607}", "alien": "\u{1f47d}",
   "yellow_heart": "\u{1f49b}", "blue_heart": "\u{1f499}", "purple_heart": "\u{1f49c}",
   "heart" : "\u2764\ufe0f", "green_heart" : "\u{1f49a}", "broken_heart": "\u{1f494}",
@@ -155,16 +155,16 @@ const EMOJI_MAP = {
   "zzz" : "\u{1f4a4}", "dash": "\u{1f4a8}", "sweat_drops" : "\u{1f4a6}", "notes" :"\u{1f3b6}",
   "musical_note": "\u{1f3b5}", "fire": "\u{1f525}", "hankey": "\u{1f4a9}", "poop": "\u{1f4a9}",
   "shit": "\u{1f4a9}", "thumbsup": "\u{1f44d}", "+1": "\u{1f44d}", "thumbsdown": "\u{1f44e}",
-  "-1": "\u{1f44e}", "ok_hand": "\u{1f44c}", "punch" : "\u{1f44a}", "facepunch" : "\u{1f44a}",
+  "-1": "\u{1f44e}", "ok_hand": "\u{1f44c}", "punch": "\u{1f44a}", "facepunch": "\u{1f44a}",
   "fist": "\u270a", "V": "\u270c\ufe0f", "wave": "\u{1f44b}", "hand": "\u270b",
   "raised_hand": "\u270b", "open_hands": "\u{1f450}", "point_up": "\u261d\ufe0f",
   "point_down": "\u{1f447}", "point_left":"\u{1f448}", "point_right": "\u{1f449}",
   "raised_hands": "\u{1f64c}", "pray": "\u{1f64f}", "point_up_2": "\u{1f446}", "clap": "\u{1f44f}",
   "muscle": "\u{1f4aa}", "metal": "\u{1f918}", "fu": "\u{1f595}",
-  "walking": "\u{1f6b6}", "runner": "\uf1f33)", "running": "\u{1f3c3}",
+  "walking": "\u{1f6b6}", "runner": "\u{1f3c3}", "running": "\u{1f3c3}",
   "couple": "\u{1f46b}", "family": "\u{1f46a}", "two_men_holding_hands": "\u{1f46c}",
   "two_women_holding_hands": "\u{1f46d}", "dancer": "\u{1f483}",
-  "bow": "\u{1f647}", "couplekiss": "\u{1f48f}", "couple_With_heart": "\u{1f491}",
+  "bow": "\u{1f647}", "couplekiss": "\u{1f48f}", "couple_with_heart": "\u{1f491}",
   "massage": "\u{1f486}", "haircut": "\u{1f487}", "nail_care": "\u{1f485}", "boy": "\u{1f466}",
   "girl": "\u{1f467}", "woman": "\u{1f469}", "man": "\u{1f468}", "baby": "\u{1f476}",
   "older_woman": "\u{1f475}", "older_man": "\u{1f474}",
@@ -176,7 +176,7 @@ const EMOJI_MAP = {
   "trophy": "\u{1f3c6}", "key": "\u{1f511}", "lock": "\u{1f512}", "unlock": "\u{1f513}",
   "hammer": "\u{1f528}", "wrench": "\u{1f527}", "bulb": "\u{1f4a1}", "mag": "\u{1f50d}",
   "mag_right": "\u{1f50e}",
-  "white_check_mark": "\u2705", "heavy_check mark":"\u2714\ufe0f",
+  "white_check_mark": "\u2705", "heavy_check_mark": "\u2714\ufe0f",
   "ballot_box_with_check": "\u2611\ufe0f", "x": "\u274c", "heavy_multiplication_x":"\u2716\ufe0f",
   "bangbang":"\u203c\ufe0f", "interrobang": "\u2049\ufe0f",
   "warning": "\u26a0\ufe0f", "construction": "\u{1f6a7}","no_entry":"\u26d4",
@@ -197,13 +197,13 @@ const EMOJI_MAP = {
   "shell": "\u{1f41a}", "bee": "\u{1f41d}", "honeybee": "\u{1f41d}", "ant": "\u{1f41c}",
   "beetle": "\u{1f41e}", "snail": "\u{1f40c}", "spider": "\u{1f577}\ufe0f",
   "apple": "\u{1f34e}", "green_apple": "\u{1f34f}", "tangerine":"\u{1f34a}",
-  "Lemon": "\u{1f34b}", "cherries": "\u{1f352}", "grapes": "\u{1f347}", "watermelon": "\u{1f349}",
+  "lemon": "\u{1f34b}", "cherries": "\u{1f352}", "grapes": "\u{1f347}", "watermelon": "\u{1f349}",
   "strawberry": "\u{1f353}", "peach": "\u{1f351}", "melon": "\u{1f348}", "banana": "\u{1f34c}",
   "pear": "\u{1f350}", "pineapple": "\u{1f34d}", "tomato": "\u{1f345}", "eggplant": "\u{1f346}",
   "pizza": "\u{1f355}", "hamburger": "\u{1f354}", "coffee": "\u2615", "beer": "\u{1f37a}",
   "beers": "\u{1f37b}", "wine_glass": "\u{1f377}", "cocktail": "\u{1f378}",
   "eyes": "\u{1f440}", "eye": "\u{1f441}\ufe0f", "ear": "\u{1f442}", "nose": "\u{1f443}", "lips": "\u{1f444}",
-  "tongue": "\u{1f445}", "brain": "\u{1f90}",
+  "tongue": "\u{1f445}", "brain": "\u{1f9e0}",
   "book": "\u{1f4d6}", "open_book": "\u{1f4d6}", "notebook": "\u{1f4d3}", "ledger": "\u{1f4d2}",
   "books": "\u{1f4da}", "bookmark": "\u{1f516}", "memo": "\u{1f4dd}", "pencil":"\u{1f4dd}",
   "pencil2": "\u270f\ufe0f", "pen": "\u{1f58a}\ufe0f", "email": "\u{1f4e7}", "envelope": "\u2709\ufe0f",
@@ -245,7 +245,7 @@ function stripTags (s) { return s.replace(/<[^>]+>/g, ""); }
 
 // Module-level list state (marked doesn't preserve custom props on renderer)
 let _listDepth = 0;
-let _listordered = false;
+let _listOrdered = false;
 
 // -----------------------------------------------------------
 // Confluence Wiki Markup renderer for marked.js
@@ -290,7 +290,7 @@ const wikiRenderer = {
     if (title) params.push(`title=${title}`);
     params.push("linenumbers=true");
     const paramStr = params.join("|");
-    return `{code:${paramStr}}\n${text}\n{code}/\n\n`;
+    return `{code:${paramStr}}\n${text}\n{code}\n\n`;
   },
 
   blockquote({ tokens }) {
@@ -331,7 +331,7 @@ const wikiRenderer = {
     const sublists = [];
     for (const t of item.tokens) {
       if (t.type === "list") {
-        subLists.push(t) ;
+        sublists.push(t);
       } else {
         inlineTokens.push(t);
       }
@@ -345,7 +345,7 @@ const wikiRenderer = {
       text = this.parser.parseInline(inlineTokens[0].tokens);
     } else {
       text = inlineTokens.map(t => {
-        if (t.type === "text" && t.tokens) return this.parerparInline(t.tokens);
+        if (t.type === "text" && t.tokens) return this.parser.parseInline(t.tokens);
         if (t.type === "paragraph") return this.parser.parseInline(t.tokens);
         return this.parser.parse([t]);
       }).join("").trim();
@@ -418,7 +418,7 @@ const wikiRenderer = {
     if (mdMatch) {
       const pageTitle = mdMatch[1].replace(/[-_]/g, " ");
       const anchor = mdMatch[2] ? `#${mdMatch[2]}` : "";
-      return `[${text}|${pageTitle}${anchor}|`;
+      return `[${text}|${pageTitle}${anchor}]`;
     }
 
     // Anchor-only link
@@ -440,7 +440,7 @@ const wikiRenderer = {
     if (title) params.push(`title=${title}`);
     const paramStr = params.length ? "|" + params.join(",") : "";
 
-    if (href.startsWith("http://") || href.startswith("https://")) {
+    if (href.startsWith("http://") || href.startsWith("https://")) {
       return `!${href}${paramStr}!`;
     }
     // Local attachment - use filename only
@@ -525,8 +525,8 @@ function preprocessDefinitionLists(md) {
 // Configure marked
 // -------------------------------------------------
 marked.use({
-  renderer: wikiRenderer, 
-  gtm: true, 
+  renderer: wikiRenderer,
+  gfm: true,
   breaks: false,
 });
 
@@ -703,6 +703,7 @@ And a local attachment:
     ]
   }
 }
+\`\`\`
 
 ## Changelog
 
@@ -724,7 +725,7 @@ Here's a line with emoji: :thumbsup: :fire: :bug: :warning: :heart:
 
 ## Footnotes
 
-This project uses the MIT licensel^1]. The documentation follows the Diátaxis framework[^2].
+This project uses the MIT license[^1]. The documentation follows the Diátaxis framework[^2].
 
 [^1]: See the full text at https://opensource.org/licenses/MIT
 [^2]: More info at https://diataxis.fr/
